@@ -1,11 +1,13 @@
-import express from "express"
+import express from 'express'
 
 const app = express()
 
 app.get('/', (req, res) => {
-    res.send("ola")
+    res.send('Hello World!!!')
 })
 
-app.listen(3000, () => {
-    console.log("rodando")
+app.get('/oi', (req, res) => {
+    res.send('Olá mundo!!!')
 })
+
+app.listen(3000)
