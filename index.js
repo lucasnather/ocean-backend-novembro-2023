@@ -42,10 +42,6 @@ app.put("/item/:id", (req, res) => {
 
     if (!lista[time]) return res.send("não existe")
 
-    const findIndex = lista.findIndex((_, index) => {
-        return index === Number(time)
-    })
-
     lista[findIndex] = nome
 
     res.send(lista)
@@ -57,11 +53,7 @@ app.delete("/item/:id", (req, res) => {
 
     if (!lista[time]) return res.send("não existe")
 
-    const findIndex = lista.findIndex((_, index) => {
-        return index === Number(time)
-    })
-
-    lista.splice(findIndex, 1)
+    lista.splice(time, 1)
 
     res.send(lista)
 })
