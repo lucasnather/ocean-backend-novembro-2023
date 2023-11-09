@@ -10,4 +10,6 @@ app.get('/oi', (req, res) => {
     res.send('Olá mundo!!!')
 })
 
-app.listen(3000)
+app.listen(3000,() => {
+    console.log("rodou");
+})
