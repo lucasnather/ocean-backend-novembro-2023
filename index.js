@@ -15,7 +15,7 @@ app.get('/oi', (req, res) => {
 const lista = ["sao paulo", "vasco", "flamengo", "fluminense"]
 
 app.get("/item", (req, res) => {
-    res.send(lista)
+    res.send(lista.filter(Boolean))
 })
 
 app.get("/item/:id", (req, res) => {
@@ -53,7 +53,7 @@ app.delete("/item/:id", (req, res) => {
 
     if (!lista[time]) return res.send("não existe")
 
-    lista.splice(time, 1)
+    delete lista[time]
 
     res.send(lista)
 })
